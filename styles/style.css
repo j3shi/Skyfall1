@@ -1,0 +1,133 @@
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #f1f1f1;
+    --accent-color: #c0c0c0;
+    --highlight-color: #34b0d3;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background-image: url(/skyfall1/images/placeholder.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px var(--highlight-color)
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.check-icon {
+    background: url(https://www.nettimokki.com/build/images/check-icon-green-2.95c926f0.svg) no-repeat left center;
+    padding-top: 5px;
+    padding-left: 20px;
+    
+}
+
+#cottage-photos {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.carousel img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
+    border-radius: 8px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    justify-content: center;
+}
+
+#description_text {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tab-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: center;
+}
