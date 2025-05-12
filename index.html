@@ -5,14 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skyfall 1</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header class="hero">
+        <ul class="tab-links">
+            <li id="basic_attributes_li" class="">
+                <a href="javascript:scrollToSection('basic_attributes');">
+                    MÖKIN INFO
+                </a>
+            </li>
+            <li id="attributes_li" class="">
+                <a href="javascript:scrollToSection('attributes');">
+                    OMINAISUUDET
+                </a>
+            </li>
+                    <li id="price_information_li">
+                    <a href="javascript:scrollToSection('price_information');">
+                        HINTATIEDOT
+                    </a>
+                </li>
+                <li id="location_and_map_li">
+                <a href="javascript:scrollToSection('location_and_map');">
+                    SIJAINTI
+                </a>
+            </li>
+                 <li id="reservation_calendar_li">
+                <a href="javascript:scrollToSection('reservation_calendar');">
+                    VARAUSKALENTERI
+                </a>
+            </li>
+            </ul>
         <div class="overlay">
-            <h1>Skyfall 1</h1>
-            <p>Somewhere in Lapland, where the world disappears...</p>
-            <h3>99130 SIRKKA, Lappi</h3>
+            <h1>SKYFALL 1</h1>
+            <p>LEVI</p>
         </div>
                 
     </header>
@@ -21,11 +50,11 @@
     <div class="carousel">
         <img src="./images/mokki_etu.jpg" alt="1" onclick="openModal(this)">
         <img src="./images/olohuone.jpg" alt="2" onclick="openModal(this)">
-        <img src="./images/lappi_kuva 1.jpeg" alt="7" onclick="openModal(this)">
         <img src="./images/makuuhuone 2.jpg" alt="3" onclick="openModal(this)">
         <img src="./images/makuuhuone 1.jpg" alt="4" onclick="openModal(this)">
         <img src="./images/makuuhuone 3.jpg" alt="5" onclick="openModal(this)">
         <img src="./images/mokki_taka.jpg" alt="6" onclick="openModal(this)">
+        <img src="./images/lappi_kuva 1.jpeg" alt="7" onclick="openModal(this)">
         <img src="./images/lappi_kuva 2.jpeg" alt="8" onclick="openModal(this)">
     </div>
     
@@ -36,43 +65,12 @@
         <img id="modalImage" src="" alt="">
     </div>
     
-    <section id="description">
-        <ul class="tab-links">
-            <li id="basic_attributes_li" class="">
-                <a href="javascript:scrollToSection('basic_attributes');">
-                    Kohteen tiedot
-                </a>
-            </li>
-            <li id="attributes_li" class="">
-                <a href="javascript:scrollToSection('attributes');">
-                    Ominaisuudet
-                </a>
-            </li>
-                    <li id="price_information_li">
-                    <a href="javascript:scrollToSection('price_information');">
-                        Hintatiedot
-                    </a>
-                </li>
-                <li id="location_and_map_li">
-                <a href="javascript:scrollToSection('location_and_map');">
-                    Sijainti
-                </a>
-            </li>
-                 <li id="reservation_calendar_li">
-                <a href="javascript:scrollToSection('reservation_calendar');">
-                    Varauskalenteri
-                </a>
-            </li>
-            </ul>
-    </section>
 
     <section id="description_text">
         <p>
-            HINNAT OVAT ALKAEN HINTOJA (NETTIMÖKIN HINNASTO EI VOIMASSA), PYYDÄ TARJOUS SÄHKÖPOSTITSE, EI PUHELIN TIEDUSTELUJA! leviskyfall@gmail.com
+            SKYFALL 1 LEVI
             <br><br>
-            Käy tykkäämässä facebook sivuistamme Skyfall Levi niin saat ensimmäisenä tiedot tarjouksistamme.
-            <br><br>
-            SKYFALL 1 LEVI on ski out & putt in mökki. Mökistä on lyhyet etäisyydet laskettelemaan (100m 6. rinteen ala-asemalle) ja golfaamaan (100m). Autoa et tarvitse välttämättä ollenkaan kun ski-bussi kulkee vajaan 100m päästä koko päivän.
+            on ski out & putt in mökki. Mökistä on lyhyet etäisyydet laskettelemaan (100m 6. rinteen ala-asemalle) ja golfaamaan (100m). Autoa et tarvitse välttämättä ollenkaan kun ski-bussi kulkee vajaan 100m päästä koko päivän.
             <br><br>
             Mökki on aivan ihanteellinen 2-3 perheelle sijaintinsa ja pohjaratkaisunsa vuoksi. Lomailu ja liikkuminen on erittäin helppoa ja mukavaa. Tervetuloa tutustumaan!
             <br><br>
@@ -83,12 +81,18 @@
             Perustiedot: • 12-14 hengelle • Kokonaispinta-ala 120 m2 • lähin hissi 100 m • Levikeskukseen 4,5 km • Ladulle n. 50 m • Moottorikelkkareitille 50 m • Lentoasema 16 km • Skibussille 100 m
             <br><br>
             Tervetuloa nauttimaan tunturin tunnelmasta SKYFALLiin .
+            <br><br>
+            Käy tykkäämässä facebook sivuistamme Skyfall Levi niin saat ensimmäisenä tiedot tarjouksistamme.
+            <br><br>
+            <a href= "https://www.facebook.com/p/Skyfall-Levi-100063542411314/" target="_blank">
+                <img src="/images/Facebook_Logo_Primary.png" alt="Facebook" style="width: 24px; height: 24px; vertical-align: middle;">
+            </a>
         </p>
         <p></p>
     </section>
 
     <section id="basic_attributes">
-        <h3>Kohteen tiedot</h3>
+        <h3>Mökin info</h3>
         <ul>
             <li>Vuodepaikkoja: 12</li>
             <li>Huoneita: 5</li>

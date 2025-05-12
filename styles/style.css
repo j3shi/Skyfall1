@@ -4,18 +4,35 @@
     --accent-color: #c0c0c0;
     --highlight-color: #34b0d3;
     --linear-gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: Arial, Helvetica;
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/lappibackground.jpeg') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px) brightness(0.7);
+    z-index: -1;
+    opacity: 0.8;
 }
 
 .hero {
-    background-image: var(--linear-gradient), url(/images/mokki_taka.jpg);
+    background-image: var(--linear-gradient), url(/images/olohuone.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,24 +41,55 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 1;
     transition: background-image 1s ease-in-out;
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    border-radius: 12px;
+    width: 300px; /* Set the width of the circle */
+    height: 300px; /* Set the height equal to the width */
+    padding: 2rem; /* Adjust padding to fit inside the circle */
+    border-radius: 50%; /* Make it a perfect circle */
     text-align: center;
+    z-index: 5;
+    position: relative;
+    color: var(--text-color); /* Ensure text is readable */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Prevent the text from being blurred */
+    overflow: hidden; /* Ensure the pseudo-element stays within the circle */
+}
+
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Match the circle shape */
+    z-index: -1; /* Place the background behind the text */
+    background: url('/images/istockphoto-1185316450-612x612.svg') no-repeat center;
+    background-size: 150%; /* Ensure the image covers the entire overlay */
+    background-blend-mode: overlay;
+    filter: blur(2px) brightness(0.8); /* Apply blur only to the background */
+    opacity: 0.9; /* Adjust opacity for better visibility */
+   
+    
 }
 
 header h1 {
     font-size: 3em;
+    font-family: var(--font-heading);
     color: var(--text-color);
-    text-shadow: 2px 2px 4px var(--highlight-color)
+    margin: 0;
 }
 
 a {
-    color: var(--text-color);
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -51,6 +99,7 @@ a:hover {
 
 ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .check-icon {
@@ -74,8 +123,8 @@ ul {
 }
 
 .carousel img {
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
@@ -102,6 +151,7 @@ ul {
 .modal img {
     max-width: 90%;
     max-height: 90%;
+    border-radius: 8px;
 }
 
 .close {
@@ -109,7 +159,7 @@ ul {
     top: 20px;
     right: 20px;
     font-size: 40px;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -119,7 +169,7 @@ ul {
     justify-content: space-between;
     text-align: center;
     justify-content: center;
-    
+    color: var(--text-color);
 }
 
 #description_text {
@@ -129,33 +179,53 @@ ul {
     border-radius: 12px;
     text-align: center;
     border: solid 1px var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .tab-links {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 10;
+    max-width: 100%;
     justify-content: space-between;
-    gap: 10px;
-    text-align: center;
-    margin: 20px 0;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    font-size: large;
-    font-weight: bold;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
-#basic_attributes {
+.tab-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--font-body);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-links a:hover {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+}
+
+#basic_attributes,
+#attributes,
+#price_information,
+#location_and_map,
+#reservation_calendar {
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
     border: solid 1px var(--accent-color);
-}
-
-#attributes {
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    border: solid 1px var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
 }
 
 .attributes_list {
@@ -171,23 +241,57 @@ ul {
     width: fit-content;
 }
 
-#price_information {
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    border: solid 1px var(--accent-color);
+.map, .calendar {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    margin-bottom: 20px;
 }
 
-#location_and_map {
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    border: solid 1px var(--accent-color);
+.map iframe, .calendar iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-#reservation_calendar {
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    border: solid 1px var(--accent-color);
+@media (max-width: 768px) {
+    .hero {
+        padding: 10px;
+        text-align: center;
+    }
+    .overlay {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .tab-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tab-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .map, .calendar {
+        padding-top: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .overlay {
+        padding: 1.5rem;
+    }
+
+    .tab-links a {
+        font-size: 0.8rem;
+    }
 }
