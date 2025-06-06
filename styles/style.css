@@ -308,12 +308,12 @@ footer {
         top: 210px;
         left: 60px;
         transform: translateX(-50%);
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
     }
 
     .askforoffer h3 {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         line-height: 1.1;
     }
 
