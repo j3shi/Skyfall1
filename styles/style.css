@@ -300,6 +300,21 @@ footer {
     .overlay {
         width: 90%;
         max-width: 300px;
+        width: 250px;
+        height: 100px;
+    }
+
+    .askforoffer {
+        top: 210px;
+        left: 60px;
+        transform: translateX(-50%);
+        width: 110px;
+        height: 110px;
+    }
+
+    .askforoffer h3 {
+        font-size: 0.7rem;
+        line-height: 1.1;
     }
 
     .tab-links {
